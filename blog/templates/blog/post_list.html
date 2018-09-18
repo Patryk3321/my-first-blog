@@ -3,16 +3,17 @@
         <title>Kurs Django !</title>
     </head>
     <body>
-        <div>
+      <div>
             <h1><a href="/">Kurs Django </a></h1>
-        </div>
+      </div>
 
+      {% for post in posts %}
         <div>
-          {% for post in posts %}
-              {{ posts }}
-          {% endfor %}
+          <p>Opublikowane: {{ post.published_date }}</p>
+          <h1><a href="">{{ post.title }}</a></h1>
+          <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
+    {% endfor %}
         <div>
             <p>published: 18.09.2018, 07:00</p>
             <h2><a href="">Drugi post</a></h2>
